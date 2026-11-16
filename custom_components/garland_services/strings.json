@@ -9,6 +9,28 @@
           "longitude": "Longitude"
         }
       }
+    },
+    "abort": {
+      "already_configured": "This location is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Garland waste collection options",
+        "data": {
+          "project_recycling": "Project recycling into years without a verified calendar"
+        },
+        "data_description": {
+          "project_recycling": "Continues the every-other-week Blue/Yellow cadence past the last verified calendar year. Projected pickups are flagged as unverified."
+        }
+      }
+    }
+  },
+  "issues": {
+    "new_recycling_calendar": {
+      "title": "Garland published its {year} recycling calendar",
+      "description": "The City of Garland has posted a new annual Blue/Yellow recycling calendar for {year}. Recycling dates for {year} are currently projected from the previous year's every-other-week cadence. Compare the first few weeks with the calendar ({url}) and update the integration when a release verifies {year}."
     }
   }
 }

@@ -44,3 +44,19 @@ class GarlandClient:
     async def get_routes(self, latitude: float, longitude: float) -> dict[str, dict]:
         results = await asyncio.gather(*(self.get_route(s,latitude,longitude) for s in LAYERS))
         return dict(zip(LAYERS, results))
+
+    async def get_page(self, url: str) -> str:
+        """Fetch a public garlandtx.gov page as text."""
+        try:
+            async with asyncio.timeout(25):
+                async with self.session.get(url, headers=PAGE_HEADERS) as response:
+                    response.raise_for_status()
+                    return await response.text()
+        except (aiohttp.ClientError, TimeoutError, UnicodeDecodeError) as exc:
+            raise GarlandApiError(f"{url}: {exc}") from exc
+
+
+PAGE_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (compatible; HomeAssistant-garland_services; +https://github.com/Jmanitpro/ha-garland-services)",
+    "Accept": "text/html,application/xhtml+xml",
+}
