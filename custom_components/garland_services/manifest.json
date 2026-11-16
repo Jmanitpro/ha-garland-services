@@ -1,0 +1,12 @@
+{
+  "domain": "garland_services",
+  "name": "Garland City Services",
+  "version": "0.1.0",
+  "config_flow": true,
+  "documentation": "https://github.com/okie2020/ha-okc-services",
+  "issue_tracker": "https://github.com/okie2020/ha-okc-services/issues",
+  "requirements": [],
+  "codeowners": [],
+  "iot_class": "cloud_polling",
+  "integration_type": "service"
+}

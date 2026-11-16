@@ -1,0 +1,14 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Garland waste collection",
+        "description": "Coordinates default to your Home Assistant home zone. Use a location inside Garland, Texas.",
+        "data": {
+          "latitude": "Latitude",
+          "longitude": "Longitude"
+        }
+      }
+    }
+  }
+}
